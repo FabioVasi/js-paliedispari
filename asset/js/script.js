@@ -18,45 +18,51 @@ non partiamo a bomba con la scrittura delle funzioni, ma prima scriviamo la logi
 Strumenti.
 
 - prompt
+- const
 - function
-- result
+- return/result
 - if/else
 - log
-
+- alert
 */
 
+// chiedo all'utente di inserire un numero tra 1 e 5
 const userNumber = Number(prompt("Scegli un numero tra 1 e 5"));
 
+// se è troppo alto
 if(userNumber > 5) {
 
-    alert("Hai inserito un numero troppo alto, ritenta")
-
+    alert("Hai inserito un numero troppo alto, ritenta")// alert 1
+// se è troppo basso
 } else if(userNumber <= 0) {
 
-    alert("Hai inserito un numero troppo basso, ritenta")
+    alert("Hai inserito un numero troppo basso, ritenta")// alert 2
 
 }
 
+// genero un numero random per il computer
 const randomNumber = Math.floor(Math.random() * 5) + 1;
 
+// loggo in console i numeri generati
 console.log(userNumber, randomNumber);
 
+// creo una funzione che abbia come valori i miei due numeri "userNumber, randomNumber"
 function sommaNumeri(userNumber, randomNumber) {
-
+// creo una costante che sia uguale alla somma dei miei numeri
     const result = userNumber + randomNumber
-
+// verifico se il numero generato è pari o dispari
     if(result % 2 === 0) {
-        
+// se pari lo dichiaro vincitore        
         console.log(result + " vince pari");
     
     } else {
-    
+// se dispari lo dichiaro vincitore      
         console.log(result + " vince dispari");
     
     }
-    
+// chiedo il risultato    
     return result
 
 }
-
+// loggo in console la funzione
 console.log(sommaNumeri(userNumber, randomNumber));
