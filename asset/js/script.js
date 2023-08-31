@@ -78,36 +78,37 @@ console.log(sommaNumeri(userNumber, randomNumber));
 // chiedo all'utente di inserire una parola
 const palindromeWord = prompt("Inserisci una parola casuale");
 
-// se non inserisce nulla nel prompt
+// se non inserisce nulla nel prompt lo avviso altrimenti vado avanti
 if(palindromeWord == "") {
 
     alert("Inserisci una parola")// alert
 
 }
 
-// loggo in console la parola inserita dall'utente
-console.log(palindromeWord);
+// inverto il di posto le lettere della parola inserita dall'utente
+const reverseWord = palindromeWord.split("").reverse().join("");
+
+// loggo in console la parola inserita dall'utente e il suo inverso
+console.log(palindromeWord, reverseWord);
 
 // creo una funzione per verificare che la parola inserita dall'utente sia palindroma
-function palindrome(palindromeWord) {
+function palindrome(palindromeWord, reverseWord) {
 
-    if(palindromeWord ) {
 
-        return 
+    if(palindromeWord == reverseWord) {
+// se la parola inserita dall'utente è uguale alla sua variante inversa allora è Palindroma (la loggo in console e return = true)
+        console.log("la parola è palindroma");
+
+        return true;
+
+    } else {
+// se la parola inserita dall'utente è diversa dalla sua variante inversa allora non è Palindroma (la loggo in console e return = false)
+        console.log("la parola non è palindroma");
+
+        return false;
 
     }
 
-    return
-
 }
-
-
-
-
-
-
-
-
-
-
-
+// loggo in console la funzione
+console.log(palindrome(palindromeWord, reverseWord));
