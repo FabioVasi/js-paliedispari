@@ -48,21 +48,66 @@ console.log(userNumber, randomNumber);
 
 // creo una funzione che abbia come valori i miei due numeri "userNumber, randomNumber"
 function sommaNumeri(userNumber, randomNumber) {
+
 // creo una costante che sia uguale alla somma dei miei numeri
     const result = userNumber + randomNumber
+
 // verifico se il numero generato è pari o dispari
     if(result % 2 === 0) {
-// se pari lo dichiaro vincitore        
+
+        // se pari lo dichiaro vincitore        
         console.log(result + " vince pari");
     
     } else {
-// se dispari lo dichiaro vincitore      
+
+        // se dispari lo dichiaro vincitore      
         console.log(result + " vince dispari");
     
     }
+
 // chiedo il risultato    
     return result
 
 }
+
 // loggo in console la funzione
 console.log(sommaNumeri(userNumber, randomNumber));
+
+
+
+// chiedo all'utente di inserire una parola
+const palindromeWord = prompt("Inserisci una parola casuale");
+
+// se non inserisce nulla nel prompt
+if(palindromeWord == "") {
+
+    alert("Inserisci una parola")// alert
+
+}
+
+// loggo in console la parola inserita dall'utente
+console.log(palindromeWord);
+
+// creo una funzione per verificare che la parola inserita dall'utente sia palindroma
+function palindrome(palindromeWord) {
+
+    if(palindromeWord ) {
+
+        return 
+
+    }
+
+    return
+
+}
+
+
+
+
+
+
+
+
+
+
+
