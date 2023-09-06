@@ -26,7 +26,17 @@ Strumenti.
 - alert
 */
 
-// chiedo all'utente di inserire un numero tra 1 e 5
+// chiedo all'utente di scegliere Pari o Dispari
+const userChoise = prompt("Scegli Pari o Dispari");
+
+// se l'utente inserisce una parola diversa da Pari o Dispari lo avviso altrimenti vado avanti
+if (userChoise == 'Pari' || userChoise == 'Dispari') {
+    
+} else {
+    alert('Hai fatto una scelta non esistente, ritenta');
+} 
+
+// chiedo all'utente di inserire un numero tra 1 e 5 se è troppo alto o e è troppo basso lo avviso
 const userNumber = Number(prompt("Scegli un numero tra 1 e 5"));
 
 // se è troppo alto
@@ -43,35 +53,40 @@ if(userNumber > 5) {
 // genero un numero random per il computer
 const randomNumber = Math.floor(Math.random() * 5) + 1;
 
-// loggo in console i numeri generati
-console.log(userNumber, randomNumber);
+// loggo in console la scelta dell'utente e i numeri generati
+console.log(userChoise, userNumber, randomNumber);
 
-// creo una funzione che abbia come valori i miei due numeri "userNumber, randomNumber"
-function sommaNumeri(userNumber, randomNumber) {
+// creo una funzione che abbia come valori la scelta dell'utente ed  i due numeri generati "userNumber, randomNumber"
+function sommaNumeri(userChoise, userNumber, randomNumber) {
 
-// creo una costante che sia uguale alla somma dei miei numeri
-    const result = userNumber + randomNumber
+// creo una costante che sia uguale alla somma dei numeri generati
+    const result = userNumber + randomNumber;
 
-// verifico se il numero generato è pari o dispari
-    if(result % 2 === 0) {
+    // verifico se il numero generato è pari o dispari e se corrisponde alla scelta dell'utente
+    if(result % 2 === 0 && userChoise == 'Pari') {
 
-        // se pari lo dichiaro vincitore        
+        // se pari lo dichiaro vincitore
         console.log(result + " vince pari");
     
+    } else if((result % 2 !== 0 && userChoise == 'Dispari')) {
+
+        // se dispari lo dichiaro vincitore
+        console.log(result + " vince dispari");
+
+    // se il numero non corrisponde alla scelta dell'utente lo dichiaro sconfitto 
     } else {
 
-        // se dispari lo dichiaro vincitore      
-        console.log(result + " vince dispari");
+        alert('Hai perso');
     
     }
 
-// chiedo il risultato    
+    // chiedo il risultato    
     return result
 
 }
 
 // loggo in console la funzione
-console.log(sommaNumeri(userNumber, randomNumber));
+console.log(sommaNumeri(userChoise, userNumber, randomNumber));
 
 
 
